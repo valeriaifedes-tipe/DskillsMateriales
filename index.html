@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Skills · Material de las sesiones</title>
+<meta name="description" content="Descarga el material de las sesiones del programa Digital Skills.">
+<link rel="icon" href="https://digitalskills-ia.com/wp-content/uploads/2025/06/cropped-favicon-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta inspirada en digitalskills-ia.com */
+    --brand:#6B3CFF;            /* violeta principal */
+    --brand-dark:#4A24CC;
+    --brand-soft:#F1ECFF;
+    --accent:#FFD23F;           /* amarillo de detalles */
+    --ink:#0E0B2B;
+    --ink-2:#2A2553;
+    --muted:#5F6480;
+    --line:#E8E4F4;
+    --bg:#FFFFFF;
+    --bg-soft:#FAF8FF;
+    --radius:18px;
+    --shadow:0 14px 40px rgba(20,15,60,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Manrope','Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* === Banner Next Generation EU (top strip) === */
+  .eu-banner{
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:8px 0;
+  }
+  .eu-banner .container{display:flex;align-items:center;justify-content:center}
+  .eu-banner img{height:42px}
+  .eu-banner .fallback{
+    display:flex;align-items:center;gap:14px;color:var(--muted);font-size:12px;font-weight:500;
+  }
+  .eu-banner .flag{
+    width:36px;height:24px;border-radius:3px;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 40%, transparent 41%),
+      #003399;
+    position:relative;display:inline-block;
+  }
+  .eu-banner .flag::after{
+    content:"★ ★ ★ ★ ★";position:absolute;inset:0;
+    color:#FFCC00;font-size:9px;line-height:24px;text-align:center;letter-spacing:1px;
+  }
+
+  /* === Header === */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
+  .logo{display:flex;align-items:center;color:var(--ink)}
+  .logo img{height:40px;width:auto;display:block}
+  .nav nav{display:flex;gap:24px;align-items:center}
+  .nav nav a{color:var(--ink-2);font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--brand)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--brand);color:#fff;
+    border:none;border-radius:999px;
+    padding:11px 20px;font-weight:700;font-size:14px;cursor:pointer;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 20px rgba(107,60,255,.28);
+    font-family:inherit;
+  }
+  .btn:hover{background:var(--brand-dark);transform:translateY(-1px)}
+  .btn.ghost{
+    background:transparent;color:var(--brand);
+    border:1.5px solid var(--brand);box-shadow:none;
+  }
+  .btn.ghost:hover{background:var(--brand-soft)}
+
+  /* === Hero === */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(157,123,255,.45), transparent 60%),
+      radial-gradient(700px 380px at 5% 10%, rgba(107,60,255,.30), transparent 60%),
+      linear-gradient(180deg,#19133F 0%,#241867 100%);
+    color:#fff;
+    padding:90px 0 130px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 10% 80%, rgba(255,210,63,.12) 0, transparent 12%),
+      radial-gradient(circle at 90% 30%, rgba(255,255,255,.08) 0, transparent 8%);
+    pointer-events:none;
+  }
+  .hero .container{position:relative;z-index:1}
+  .hero .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    color:#E5DDFF;font-size:13px;font-weight:600;
+    padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  .hero .eyebrow::before{
+    content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(255,210,63,.18);
+  }
+  .hero h1{
+    font-size:clamp(36px,5.2vw,60px);
+    line-height:1.04;letter-spacing:-.025em;
+    margin:0 0 18px;font-weight:800;
+    max-width:880px;
+  }
+  .hero h1 .accent{color:var(--accent)}
+  .hero p.lead{
+    font-size:19px;max-width:720px;
+    color:#D6D1F2;margin:0 0 32px;font-weight:400;
+  }
+  .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn{background:#fff;color:var(--brand-dark);box-shadow:0 12px 30px rgba(0,0,0,.22)}
+  .hero .btn:hover{background:#F4F0FF}
+  .hero .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+  .hero .btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+  /* === Sessions wrapper === */
+  .sessions{
+    margin-top:-80px;
+    position:relative;z-index:2;
+    padding-bottom:80px;
+  }
+  .session{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:32px;
+    margin-bottom:24px;
+  }
+  .session-head{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;margin-bottom:22px;flex-wrap:wrap;
+    padding-bottom:20px;border-bottom:1px solid var(--line);
+  }
+  .session-head .title{display:flex;align-items:center;gap:16px}
+  .session-head .num{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg,var(--brand-soft) 0%,#E1D5FF 100%);
+    color:var(--brand-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:20px;letter-spacing:-.02em;
+  }
+  .session-head h2{margin:0;font-size:24px;letter-spacing:-.015em;font-weight:800}
+  .session-head .sub{color:var(--muted);font-size:14px;margin-top:3px}
+  .badge{
+    font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px;
+    background:#E7F8EE;color:#0E8A4B;border:1px solid #C8EED7;
+    text-transform:uppercase;letter-spacing:.04em;
+  }
+  .badge.soon{background:#FFF6E5;color:#A26500;border-color:#FFE3A8}
+
+  /* === File list === */
+  .files{display:grid;grid-template-columns:1fr;gap:12px}
+  .file{
+    display:flex;align-items:center;gap:16px;
+    padding:16px 18px;border:1px solid var(--line);
+    border-radius:14px;background:var(--bg-soft);
+    transition:border-color .15s ease, background .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .file:hover{
+    border-color:#C9BEFF;background:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(107,60,255,.10);
+  }
+  .file .ftype{
+    width:48px;height:48px;flex:0 0 48px;
+    border-radius:12px;background:var(--brand-soft);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--brand);font-weight:800;font-size:12px;letter-spacing:.06em;
+  }
+  .file .ftype.pdf{background:#FDECEC;color:#C8312B}
+  .file .ftype.ppt{background:#FCEFE3;color:#B85A1E}
+  .file .ftype.doc{background:#E8F0FE;color:#1A56DB}
+  .file .ftype.xls{background:#E7F6EE;color:#1F7A4D}
+  .file .ftype.zip{background:#F0EBFF;color:#5B2EFF}
+  .file .ftype.vid{background:#FFE8F1;color:#C71668}
+  .file .meta{flex:1;min-width:0}
+  .file .name{font-weight:700;color:var(--ink);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px}
+  .file .desc{color:var(--muted);font-size:13px;margin-top:2px}
+  .file .desc .size{
+    display:inline-block;background:#fff;border:1px solid var(--line);
+    border-radius:6px;padding:2px 7px;font-size:11px;font-weight:600;color:var(--ink-2);margin-left:6px;
+  }
+  .file .dl{
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--brand);color:#fff;border-radius:11px;
+    padding:10px 16px;font-weight:700;font-size:13px;
+    transition:background .15s ease, transform .15s ease;
+    flex-shrink:0;
+  }
+  .file .dl:hover{background:var(--brand-dark);transform:translateY(-1px)}
+  .file .dl svg{width:14px;height:14px}
+
+  .empty{
+    border:1.5px dashed var(--line);border-radius:14px;
+    padding:30px;text-align:center;color:var(--muted);
+    background:var(--bg-soft);font-size:15px;
+  }
+
+  /* === Footer === */
+  footer.site{
+    border-top:1px solid var(--line);
+    background:#fff;padding:36px 0 30px;
+    color:var(--muted);font-size:14px;
+  }
+  footer.site .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  footer.site .row a{color:var(--brand);font-weight:600}
+  footer.site .row a:hover{text-decoration:underline}
+
+  @media (max-width:640px){
+    .nav nav{display:none}
+    .session{padding:22px}
+    .file{flex-wrap:wrap}
+    .file .dl{margin-left:auto}
+    .hero{padding:64px 0 100px}
+    .session-head .num{width:46px;height:46px;font-size:17px}
+    .session-head h2{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Banner Next Generation EU -->
+<div class="eu-banner">
+  <div class="container">
+    <img src="https://digitalskills-ia.com/wp-content/themes/digitalskills/assets/dist/images/banner-header-eu.png"
+         alt="Financiado por la Unión Europea - Next Generation EU"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="fallback" style="display:none">
+      <span class="flag"></span>
+      <span>Financiado por la Unión Europea · Next Generation EU · Plan de Recuperación, Transformación y Resiliencia</span>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a class="logo" href="#" aria-label="Digital Skills">
+      <img src="assets/logo.png" alt="Digital Skills">
+    </a>
+    <nav>
+      <a href="#sesion1">Sesión 1</a>
+      <a href="#sesion2">Sesión 2</a>
+      <a href="#sesion3">Sesión 3</a>
+      <a href="https://digitalskills-ia.com/" target="_blank" rel="noopener">Web del programa</a>
+    </nav>
+    <a class="btn" href="#sesion1">Descargar material</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Plataforma de descargas</span>
+    <h1>Descarga el material<br>de cada <span class="accent">sesión</span></h1>
+    <p class="lead">Aquí encontrarás todos los manuales, presentaciones y vídeos de las sesiones del programa <strong style="color:#fff;font-weight:700">Digital Skills</strong>. Haz clic en cada fichero para descargarlo.</p>
+    <div class="cta-row">
+      <a class="btn" href="#sesion1">Ver sesiones</a>
+      <a class="btn ghost" href="https://digitalskills-ia.com/" target="_blank" rel="noopener">Ir a digitalskills-ia.com</a>
+    </div>
+  </div>
+</section>
+
+<main class="sessions">
+  <div class="container">
+
+    <!-- =====================  SESIÓN 1  ===================== -->
+    <article class="session" id="sesion1">
+      <div class="session-head">
+        <div class="title">
+          <div class="num">01</div>
+          <div>
+            <h2>Sesión 1</h2>
+            <div class="sub">Manual, presentación y vídeo de la sesión</div>
+          </div>
+        </div>
+        <span class="badge">Disponible</span>
+      </div>
+      <div class="files">
+
+        <a class="file" href="Sesion%201/01_manual_alumno_sesion1.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Manual del alumno · Sesión 1</span>
+            <span class="desc">Documento principal · PDF<span class="size">356 KB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion%201/04_presentacion_sesion1.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Presentación · Sesión 1</span>
+            <span class="desc">Diapositivas · PDF<span class="size">508 KB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion%201/VideoSesion1.mp4" download>
+          <div class="ftype vid">MP4</div>
+          <div class="meta">
+            <span class="name">Vídeo de la Sesión 1</span>
+            <span class="desc">Grabación completa · MP4<span class="size">450 MB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+      </div>
+    </article>
+
+    <!-- =====================  SESIÓN 2  ===================== -->
+    <article class="session" id="sesion2">
+      <div class="session-head">
+        <div class="title">
+          <div class="num">02</div>
+          <div>
+            <h2>Sesión 2</h2>
+            <div class="sub">Manual, presentación, módulos y vídeo de la sesión</div>
+          </div>
+        </div>
+        <span class="badge">Disponible</span>
+      </div>
+      <div class="files">
+
+        <a class="file" href="Sesion2/02_manual_alumno_sesion2.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Manual del alumno · Sesión 2</span>
+            <span class="desc">Documento principal · PDF<span class="size">334 KB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion2/05_presentacion_sesion2.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Presentación · Sesión 2</span>
+            <span class="desc">Diapositivas · PDF<span class="size">564 KB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion2/07_modulo_ficheros_configuracion.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Módulo · Ficheros de configuración</span>
+            <span class="desc">Material complementario · PDF<span class="size">4,1 MB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion2/08_skill_noticias_saticas_brief.pdf" download>
+          <div class="ftype pdf">PDF</div>
+          <div class="meta">
+            <span class="name">Skill · Noticias satíricas (brief)</span>
+            <span class="desc">Material complementario · PDF<span class="size">400 KB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+        <a class="file" href="Sesion2/VideoSesion2.mp4" download>
+          <div class="ftype vid">MP4</div>
+          <div class="meta">
+            <span class="name">Vídeo de la Sesión 2</span>
+            <span class="desc">Grabación completa · MP4<span class="size">469 MB</span></span>
+          </div>
+          <span class="dl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar
+          </span>
+        </a>
+
+      </div>
+    </article>
+
+    <!-- =====================  SESIÓN 3  ===================== -->
+    <article class="session" id="sesion3">
+      <div class="session-head">
+        <div class="title">
+          <div class="num">03</div>
+          <div>
+            <h2>Sesión 3</h2>
+            <div class="sub">Material de la tercera sesión</div>
+          </div>
+        </div>
+        <span class="badge soon">Próximamente</span>
+      </div>
+
+      <!--
+        Cuando tengas el material de la sesión 3:
+        1) Sube los ficheros a la carpeta "Sesion 3/" (ya existe)
+        2) Cambia el badge: quita la clase "soon" del <span class="badge soon">
+        3) Sustituye el .empty de abajo por bloques <a class="file" ...> (copia los de la sesión 2)
+      -->
+      <div class="files">
+        <div class="empty">
+          El material de la sesión 3 se publicará próximamente.
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container row">
+    <div>© <span id="y"></span> Digital Skills · Material formativo del programa</div>
+    <div>
+      <a href="https://digitalskills-ia.com/" target="_blank" rel="noopener">digitalskills-ia.com</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:info@digitalskills-ia.com">info@digitalskills-ia.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
